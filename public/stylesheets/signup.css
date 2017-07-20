@@ -1,0 +1,63 @@
+#signupSection {
+	padding: 50px 400px;
+	text-align: center;
+}
+
+.signupTitle {
+	margin-bottom: 50px;
+}
+
+.signupTitle .firstTitle {
+	color: black; 
+    text-shadow: #77618e 0px 2px, #77618e 2px 0px, #77618e -2px 0px, 
+    #77618e 0px -2px, #77618e -1.4px -1.4px, #77618e 1.4px 1.4px, 
+    #77618e 1.4px -1.4px, #77618e -1.4px 1.4px; 
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 2.5;
+}
+
+.signupTitle .secondTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #333;
+    display: block;
+    font-weight: bold;
+}
+
+.signupInputBox {
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+.halfBox {
+	display: inline-block;
+}
+
+.signupLastnameBox {
+	width: 33%;
+	display:inline-block;
+}
+
+.signupFirstnameBox {
+	width: 66%;
+	display:inline-block;
+}
+
+.signupBirthBox {
+	width: 32.8%;
+	display: inline-block;
+}
+
+.buttons {
+	margin-top: 50px;
+}
+
+#doSignup {
+	width: 100%;
+	height: 40px;
+	background-color: #b91616;
+	color: white;	
+	border: 1px solid #a21616;
+}
+

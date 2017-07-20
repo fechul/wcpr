@@ -1,0 +1,15 @@
+
+#mainPageSection {
+	padding: 100px;
+}
+
+#mainPageImg {
+	width: 800px;
+	height: 500px;
+	background: url(/images/mainPageImg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	margin: 0 auto;
+}

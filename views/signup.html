@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>회원가입</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
+    </head>
+        <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
+        <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
+        <link rel='stylesheet' href='/stylesheets/signup.css' />
+    </head>
+
+    <body>
+		<%- include header.html %>
+
+		<section id="signupSection">
+			<div class="signupTitle">
+				<span class="firstTitle">Korea Pain Research Group</span><br>
+				<span class="secondTitle">회원가입</span>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">이메일</label>
+				<input type="text" class="form-control signupEmail" placeholder="이메일을 입력해주세요."></input>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">비밀번호</label>
+				<input type="password" class="form-control signupPassword" placeholder="영문, 숫자, 특수기호의 2가지 이상의 조합으로 8자리 이상이어야 합니다."></input>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">비밀번호 확인</label>
+				<input type="password" class="form-control signupRePassword" placeholder="비밀번호를 다시 입력해주세요."></input>
+			</div>
+
+			<div class="signupInputBox">
+				<div class="signupLastnameBox">
+					<label class="signupLabel">성</label>
+					<input type="text" class="form-control signupLastname" placeholder="성"></input>
+				</div>
+				<div class="signupFirstnameBox">
+					<label class="signupLabel">이름</label>
+					<input type="text" class="form-control signupFirstname" placeholder="이름"></input>
+				</div>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">성별</label>
+				<select class="form-control signupSex">
+					<option value="w" selected>여자</option>
+					<option value="m">남자</option>
+				</select>
+			</div>
+
+			<div class="signupInputBox">
+				<div>
+					<label class="signupLabel">생년월일</label>
+				</div>
+
+				<div class="signupBirthBox">
+					<select class="form-control signupBirthYear"></select>
+				</div>
+				
+				<div class="signupBirthBox">
+					<select class="form-control signupBirthMonth">
+						<option value="1" selected>1월</option>
+						<option value="2">2월</option>
+						<option value="3">3월</option>
+						<option value="4">4월</option>
+						<option value="5">5월</option>
+						<option value="6">6월</option>
+						<option value="7">7월</option>
+						<option value="8">8월</option>
+						<option value="9">9월</option>
+						<option value="10">10월</option>
+						<option value="11">11월</option>
+						<option value="12">12월</option>
+					</select>
+				</div>
+
+
+				<div class="signupBirthBox">
+					<select class="form-control signupBirthDate">
+						<option value="1" selected>1일</option>
+						<option value="2">2일</option>
+						<option value="3">3일</option>
+						<option value="4">4일</option>
+						<option value="5">5일</option>
+						<option value="6">6일</option>
+						<option value="7">7일</option>
+						<option value="8">8일</option>
+						<option value="9">9일</option>
+						<option value="10">10일</option>
+						<option value="11">11일</option>
+						<option value="12">12일</option>
+						<option value="13">13일</option>
+						<option value="14">14일</option>
+						<option value="15">15일</option>
+						<option value="16">16일</option>
+						<option value="17">17일</option>
+						<option value="18">18일</option>
+						<option value="19">19일</option>
+						<option value="20">20일</option>
+						<option value="21">21일</option>
+						<option value="22">22일</option>
+						<option value="23">23일</option>
+						<option value="24">24일</option>
+						<option value="25">25일</option>
+						<option value="26">26일</option>
+						<option value="27">27일</option>
+						<option value="28">28일</option>
+						<option value="29">29일</option>
+						<option value="30">30일</option>
+						<option value="31">31일</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">휴대전화번호</label>
+				<input type="text" class="form-control signupPhone" placeholder="- 없이 숫자만 입력해주세요."></input>
+			</div>
+
+			<div class="signupInputBox">
+				<label class="signupLabel">연구팀 검사 구독 자격</label>
+				<select class="form-control signupQualification">
+					<option value="">1번</option>
+					<option value="">2번</option>
+					<option value="">3번</option>
+					<option value="">4번</option>
+				</select>
+			</div>
+
+			<div class="buttons">
+					<button id="doSignup">회원가입</button>
+				</div>
+		</section>
+		
+		<%- include footer.html %>
+    </body>
+
+	<script src="jquery/jquery.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
+	<script src="modules/signup.js"></script>
+	<script src="modules/common.js"></script>
+	<script>
+		SIGNUP.init();
+		COMMON.init_events();
+	</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>로그인</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
+    </head>
+        <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
+        <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
+        <link rel='stylesheet' href='/stylesheets/login.css' />
+    </head>
+
+    <body>
+		<%- include header.html %>
+
+		<section id="loginSection">
+			<div class="loginTitle">
+				<span class="firstTitle">Korea Pain Research Group</span><br>
+				<span class="secondTitle">환영합니다!</span>
+			</div>
+			<div class="loginBox">
+				<div class="loginInputBox">
+					<label class="loginLabel">이메일</label>
+					<input type="text" class="form-control" placeholder="이메일을 입력해주세요."></input>
+					<span class="loginEmailHelp helpText"><i class="fa fa-question-circle"></i> 이메일을 잊어버리셨나요?</span>
+				</div>
+				<div class="loginInputBox">
+					<label class="loginLabel">비밀번호</label>
+					<input type="password" class="form-control" placeholder="비밀번호를 입력해주세요."></input>
+					<span class="loginPasswordHelp helpText"><i class="fa fa-question-circle"></i> 비밀번호를 잊어버리셨나요?</span>
+				</div>
+				<div class="buttons">
+					<button id="doLogin">로그인</button>
+				</div>
+			</div>
+			<div class="signupBox">
+				<div class="signupInputBox">
+					<span class="signupFirstText">아직 회원이 아니신가요?</span>
+				</div>
+				<!-- <div class="signupInputBox">
+					<span class="signupSecondText">아래 버튼을 클릭해서</span><br>
+					<span class="signupSecondText">회원가입을 해주세요!</span>
+				</div> -->
+				<div class="buttons">
+					<button id="goToSignup">회원가입</button>
+				</div>
+			</div>
+		</section>
+		
+		<%- include footer.html %>
+    </body>
+
+    <div id="notice">
+		<div id="notice-icon"></div><div id="notice-content"></div>
+	</div>
+
+	<script src="jquery/jquery.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
+	<script src="modules/login.js"></script>
+	<script src="modules/common.js"></script>
+	<script>
+		LOGIN.init();
+		COMMON.init_events();
+	</script>
+
+</html>

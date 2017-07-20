@@ -1,0 +1,106 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body {
+	padding: 0px !important;
+	font-family: "Nanum Gothic", sans-serif !important;
+}
+
+/*
+	<-- HEADER -->
+*/
+
+#header_wrap {
+	height: 70px;
+	background-color: #2f0d54;
+	flex: 0 0 70px;
+}
+
+#header {
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+
+#header .logo {
+	color: #fff;
+	font-size: 16px;
+	height: 70px;
+	width: 200px;
+	float: left;
+	padding: 15px;
+	margin-right: 50px;
+}
+
+#header .logo:hover {
+	text-decoration: none;
+}
+
+#header .main_menu {
+	display: inline-block;
+	line-height: 70px;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+#header .tools {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0px;
+}
+
+#header .tools .login,
+#header .main_menu .menu_introduce,
+#header .main_menu .menu_service,
+#header .main_menu .menu_donate {
+	display: inline-block;
+	position: relative;
+	height: 70px;
+	padding: 0px 20px 0px 20px;
+	z-index: 85 !important;
+	color: #fff;
+	cursor: pointer;
+}
+
+#header .tools .login {
+	padding-top: 25px;
+}
+
+#header .tools .login:hover,
+#header .main_menu .menu_introduce:hover,
+#header .main_menu .menu_service:hover,
+#header .main_menu .menu_donate:hover {
+ 	background-color: #240540;
+	box-shadow: 0px -4px 2px -2px white inset;
+}
+
+
+/*
+	<-- FOOTER -->
+*/
+
+footer {
+	background-color: #eee;
+	padding: 50px;
+	border-top: 1px solid #ddd;
+}
+
+.policy_info_wrap {
+	margin-bottom: 20px;
+}
+
+/*.policy_info_wrap .policy_info > .policy,
+.policy_info_wrap .policy_info > .notice {
+	display: inline-block;
+	width: 300px;
+}*/
+
+.policy_info_wrap .policy_info > .policy > a,
+.policy_info_wrap .policy_info > .notice > a {
+	text-decoration: none;
+}
+
+.footerRow {
+	line-height: 1.8;
+}
+
+
