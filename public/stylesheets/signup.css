@@ -1,6 +1,8 @@
 #signupSection {
-	padding: 50px 400px;
+	padding: 50px;
 	text-align: center;
+	width: 45%;
+	margin: 0 auto;
 }
 
 .signupTitle {
