@@ -17,31 +17,42 @@
 				<span class="firstTitle">Korea Pain Research Group</span><br>
 				<span class="secondTitle">환영합니다!</span>
 			</div>
-			<div class="loginBox">
-				<div class="loginInputBox">
-					<label class="loginLabel">이메일</label>
-					<input type="text" class="form-control" placeholder="이메일을 입력해주세요."></input>
-					<span class="loginEmailHelp helpText"><i class="fa fa-question-circle"></i> 이메일을 잊어버리셨나요?</span>
+
+			<div class="contentBox">
+				<div class="loginBox">
+					<div class="loginInputBox">
+						<label class="loginLabel">이메일</label>
+						<input type="text" class="form-control" id="emailVal" placeholder="이메일을 입력해주세요."></input>
+						<span class="loginEmailHelp helpText"><i class="fa fa-question-circle"></i> 이메일을 잊어버리셨나요?</span>
+					</div>
+					<div class="loginInputBox">
+						<label class="loginLabel">비밀번호</label>
+						<input type="password" class="form-control" id="passwordVal" placeholder="비밀번호를 입력해주세요."></input>
+						<span class="loginPasswordHelp helpText"><i class="fa fa-question-circle"></i> 비밀번호를 잊어버리셨나요?</span>
+					</div>
+					<label id="rememberEmailLabel"><input type="checkbox" id="rememberEmail"></input>이메일 기억하기</label>
+					<div class="buttons">
+						<button id="doLogin">로그인</button>
+					</div>
+					<span class="errMsg noEmail">가입된 이메일이 없습니다.</span>
+					<span class="errMsg wrongPw">비밀번호가 일치하지 않습니다.</span>
+					<span class="errMsg notAuthed">인증 진행중인 이메일입니다.</span>
+					<span class="errMsg serverErr">로그인에 실패했습니다.<br>잠시 후 다시 시도해주세요.</span>
 				</div>
-				<div class="loginInputBox">
-					<label class="loginLabel">비밀번호</label>
-					<input type="password" class="form-control" placeholder="비밀번호를 입력해주세요."></input>
-					<span class="loginPasswordHelp helpText"><i class="fa fa-question-circle"></i> 비밀번호를 잊어버리셨나요?</span>
-				</div>
-				<div class="buttons">
-					<button id="doLogin">로그인</button>
-				</div>
-			</div>
-			<div class="signupBox">
-				<div class="signupInputBox">
-					<span class="signupFirstText">아직 회원이 아니신가요?</span>
-				</div>
-				<!-- <div class="signupInputBox">
-					<span class="signupSecondText">아래 버튼을 클릭해서</span><br>
-					<span class="signupSecondText">회원가입을 해주세요!</span>
-				</div> -->
-				<div class="buttons">
-					<button id="goToSignup">회원가입</button>
+
+				<div class="signupBox">
+					<div class="signupInputBox">
+						<span class="signupFirstText">아직 회원이 아니신가요?</span>
+					</div>
+					<!-- <div class="signupInputBox">
+						<span class="signupSecondText">아래 버튼을 클릭해서</span><br>
+						<span class="signupSecondText">회원가입을 해주세요!</span>
+					</div> -->
+					<div class="buttons">
+						<button id="goToSignup">회원가입</button>
+					</div>
+					<span class="errMsg isLoginErr">&nbsp</span>
+					<span class="errMsg isLoginErr2">&nbsp<br>&nbsp</span>
 				</div>
 			</div>
 		</section>

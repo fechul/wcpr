@@ -49,6 +49,7 @@ body {
 }
 
 #header .tools .login,
+#header .tools .my_page,
 #header .main_menu .menu_introduce,
 #header .main_menu .menu_service,
 #header .main_menu .menu_donate {
@@ -61,11 +62,13 @@ body {
 	cursor: pointer;
 }
 
-#header .tools .login {
+#header .tools .login,
+#header .tools .my_page {
 	padding-top: 25px;
 }
 
 #header .tools .login:hover,
+#header .tools .my_page:hover,
 #header .main_menu .menu_introduce:hover,
 #header .main_menu .menu_service:hover,
 #header .main_menu .menu_donate:hover {

@@ -19,49 +19,59 @@
 			</div>
 
 			<div class="signupInputBox">
-				<label class="signupLabel">이메일</label>
-				<input type="text" class="form-control signupEmail" placeholder="이메일을 입력해주세요."></input>
+				<label class="signupLabel">이메일</label><br>
+				<label class="signupGuide">* 기재하신 이메일로 인증 메일이 발송됩니다.</label>
+				<input type="text" class="form-control" id="signupEmail" placeholder="이메일을 입력해주세요."></input>
+				<span class="errMsg emailAlready">이미 가입된 이메일입니다.</span>
+				<span class="errMsg emailWrong">이메일 형식에 맞지 않습니다.</span>
+				<span class="errMsg emailNotAuthed">인증 진행중인 이메일입니다.</span>
 			</div>
 
 			<div class="signupInputBox">
-				<label class="signupLabel">비밀번호</label>
-				<input type="password" class="form-control signupPassword" placeholder="영문, 숫자, 특수기호의 2가지 이상의 조합으로 8자리 이상이어야 합니다."></input>
+				<label class="signupLabel">비밀번호</label><br>
+				<label class="signupGuide">* 영문,숫자,특수기호의 2가지 이상의 조합으로 8자리 이상이어야 합니다.</label>
+				<input type="password" class="form-control" id="signupPassword" placeholder="비밀번호를 입력해주세요."></input>
+				<span class="errMsg pwWrong">비밀번호 형식에 맞지 않습니다.</span>
 			</div>
 
 			<div class="signupInputBox">
 				<label class="signupLabel">비밀번호 확인</label>
-				<input type="password" class="form-control signupRePassword" placeholder="비밀번호를 다시 입력해주세요."></input>
+				<input type="password" class="form-control" id="signupRePassword" placeholder="비밀번호를 다시 입력해주세요."></input>
+				<span class="errMsg rePwWrong">재입력한 비밀번호가 맞지 않습니다.</span>
 			</div>
 
-			<div class="signupInputBox">
-				<div class="signupLastnameBox">
+			<div class="signupInputBox col-md-12">
+				<div class="signupLastnameBox firstItem col-md-4">
 					<label class="signupLabel">성</label>
-					<input type="text" class="form-control signupLastname" placeholder="성"></input>
+					<input type="text" class="form-control" id="signupLastname" placeholder="성"></input>
+					<span class="errMsg noLastName">성을 입력해주세요.</span>
 				</div>
-				<div class="signupFirstnameBox">
+				<div class="signupFirstnameBox lastItem col-md-8">
 					<label class="signupLabel">이름</label>
-					<input type="text" class="form-control signupFirstname" placeholder="이름"></input>
+					<input type="text" class="form-control" id="signupFirstname" placeholder="이름"></input>
+					<span class="errMsg noFirstName">이름을 입력해주세요.</span>
 				</div>
 			</div>
 
 			<div class="signupInputBox">
 				<label class="signupLabel">성별</label>
-				<select class="form-control signupSex">
+				<select class="form-control" id="signupSex">
 					<option value="w" selected>여자</option>
 					<option value="m">남자</option>
 				</select>
+				<span class="errMsg noSex">성별을 선택해주세요.</span>
 			</div>
 
-			<div class="signupInputBox">
+			<div class="signupInputBox col-md-12">
 				<div>
-					<label class="signupLabel">생년월일</label>
+					<label class="signupLabel" id="signupBirthLabel">생년월일</label>
 				</div>
 
-				<div class="signupBirthBox">
+				<div class="signupBirthBox firstItem col-md-4">
 					<select class="form-control signupBirthYear"></select>
 				</div>
 				
-				<div class="signupBirthBox">
+				<div class="signupBirthBox centerItem col-md-4">
 					<select class="form-control signupBirthMonth">
 						<option value="1" selected>1월</option>
 						<option value="2">2월</option>
@@ -79,7 +89,7 @@
 				</div>
 
 
-				<div class="signupBirthBox">
+				<div class="signupBirthBox lastItem col-md-4">
 					<select class="form-control signupBirthDate">
 						<option value="1" selected>1일</option>
 						<option value="2">2일</option>
@@ -114,30 +124,53 @@
 						<option value="31">31일</option>
 					</select>
 				</div>
+				<span class="errMsg wrongBrith">생년월일이 올바르지 않습니다.</span>
 			</div>
 
 			<div class="signupInputBox">
-				<label class="signupLabel">휴대전화번호</label>
-				<input type="text" class="form-control signupPhone" placeholder="- 없이 숫자만 입력해주세요."></input>
+				<label class="signupLabel">휴대전화번호</label><br>
+				<label class="signupGuide">- 없이 숫자만 입력해주세요.</label>
+				<input type="text" class="form-control" id="signupPhone" placeholder="휴대전화번호를 입력해주세요."></input>
+				<span class="errMsg phoneAlready">이미 가입된 휴대전화번호 입니다.</span>
+				<span class="errMsg wrongPhone">휴대전화번호를 정확히 입력해주세요.</span>
 			</div>
 
 			<div class="signupInputBox">
 				<label class="signupLabel">연구팀 검사 구독 자격</label>
-				<select class="form-control signupQualification">
-					<option value="1">1번</option>
-					<option value="2">2번</option>
-					<option value="3">3번</option>
-					<option value="4">4번</option>
+				<select class="form-control" id="signupQualification">
+					<option value="" disabled selected>[선택 안함]</option>
+					<option value="1">제한된 구독</option>
+					<option value="2">구독</option>
 				</select>
+				<span class="errMsg noQaulification">연구팀 검사 구독 자격을 선택해주세요.</span>
 			</div>
 
 			<div class="buttons">
-					<button id="doSignup">회원가입</button>
-				</div>
+				<button id="doSignup">회원가입</button>
+			</div>
+			<span class="errMsg serverErr">회원가입에 오류가 발생했습니다.<br> 잠시 후 다시 시도해주세요</span>
 		</section>
 		
 		<%- include footer.html %>
     </body>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="signupSuccessModal">
+	    <div class="modal-dialog" role="document">
+	    	<div class="modal-content">
+	     	    <div class="modal-header">
+	        		<span class="modal-title">회원가입 완료</span>
+	      		</div>
+		      	<div class="modal-body">
+		        	<p class="modalContentFirst">회원가입이 1차적으로 완료되었습니다!</p>
+		        	<p class="modalContentSecond">서비스 이용을 위해서는 반드시<br>입력해주신 이메일주소로 발송된 이메일을 확인해주세요.<br>월간 검사 이용료 납부와 이메일 인증 후<br>운영자에 의해 회원 자격이 승인됩니다.</p>
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-primary" id="confirmSignup">확인</button>
+		      	</div>
+	    	</div>
+	  	</div>
+	</div>
 
 	<script src="jquery/jquery.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>

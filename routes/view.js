@@ -2,7 +2,7 @@ var express = require('express');
 var async = require('async');
 var router = express.Router();
 
-var board = require('../core/core.js');
+var core = require('../core/core.js');
 
 // 체크
 // 로그인 상태에서만 접속 가능한 페이지 체크
@@ -29,11 +29,13 @@ router.get('/', function(req, res) {
 	var path = 'index.html';
 	var json = {
 		loginDisplay: '',
-		myInfoDisplay: ''
+		myInfoDisplay: '',
+		fullName: ''
 	};
 
 	if(req.session.login) {
 		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
 	} else {
 		json.myInfoDisplay = 'display:none;';
 	}
@@ -46,11 +48,13 @@ router.get('/login', no_login, function(req, res) {
 	var path = 'login.html';
 	var json = {
 		loginDisplay: '',
-		myInfoDisplay: ''
+		myInfoDisplay: '',
+		fullName: ''
 	};
 
 	if(req.session.login) {
 		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
 	} else {
 		json.myInfoDisplay = 'display:none;';
 	}
@@ -63,11 +67,13 @@ router.get('/signup', no_login, function(req, res) {
 	var path = 'signup.html';
 	var json = {
 		loginDisplay: '',
-		myInfoDisplay: ''
+		myInfoDisplay: '',
+		fullName: ''
 	};
 
 	if(req.session.login) {
 		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
 	} else {
 		json.myInfoDisplay = 'display:none;';
 	}

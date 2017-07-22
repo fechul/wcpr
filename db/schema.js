@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var kprg_userSchema = new Schema({
     'email': String,
     'password': String,
     'lastName': String,
@@ -10,13 +10,16 @@ var userSchema = new Schema({
     'birthYear': Number,
     'birthMonth': Number,
     'birthDate': Number,
-    'phoneNumber': Number,
+    'phoneNumber': String,
     'qualification': Number,
-    'signupDate': Date
+    'signupDate': Date,
+    'authed': Boolean,
+    'token': String,
+    'level': Number
 });
 
-var user = mongoose.model('user', userSchema);
+var kprg_user = mongoose.model('kprg_user', kprg_userSchema);
 
 module.exports = {
-  'user' : user
+  'kprg_user' : kprg_user
 };

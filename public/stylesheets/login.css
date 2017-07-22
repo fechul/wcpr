@@ -73,3 +73,25 @@
 	font-size: 32px;
 	color: #888;
 }
+
+.errMsg {
+	color: #ff0000;
+	font-size: 13px;
+	display: none;
+}
+
+.isLoginErr,
+.isLoginErr2 {
+	display: none;
+}
+
+#rememberEmail {
+	margin-right: 8px;
+}
+
+#rememberEmailLabel {
+	cursor: pointer;
+	float: left;
+	margin-left: 15px;
+	font-size: 12px;
+}
