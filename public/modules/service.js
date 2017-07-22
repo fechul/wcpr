@@ -1,0 +1,5 @@
+var SERVICE = {
+	init: function() {
+
+	}
+};

@@ -32,11 +32,19 @@
 	</div>
 </div>
 
-<!-- <script>
-	var user_agent = navigator.userAgent;
+<script>
+	// var user_agent = navigator.userAgent;
 
-    document.addEventListener("DOMContentLoaded", function() {
+ //    document.addEventListener("DOMContentLoaded", function() {
     	
-	});
+	// });
+	var menuActive = '<%= menuActive %>';
+	if(menuActive) {
+		activeClass = 'menu_' + menuActive;
+		var target = document.getElementsByClassName(activeClass);
+		if(target && target.length) {
+			target[0].classList.add('active');
+		}
+	}
 
-</script> -->
+</script>

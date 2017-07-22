@@ -5,7 +5,9 @@
 }
 
 .loginTitle {
-	margin-bottom: 50px;
+	width: 45%;
+	border-bottom: 1px solid #333;
+	margin: 50px auto;
 }
 
 .loginTitle .firstTitle {
@@ -18,6 +20,8 @@
 
 .loginTitle .secondTitle {
     font-size: 28px;
+    display: block;
+    font-weight: bold;
 }
 
 .loginBox {

@@ -3,6 +3,13 @@
 body {
 	padding: 0px !important;
 	font-family: "Nanum Gothic", sans-serif !important;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+section {
+	flex: 1 1 auto;
 }
 
 /*
@@ -71,7 +78,10 @@ body {
 #header .tools .my_menu:hover,
 #header .main_menu .menu_introduce:hover,
 #header .main_menu .menu_service:hover,
-#header .main_menu .menu_donate:hover {
+#header .main_menu .menu_donate:hover,
+#header .main_menu .menu_introduce.active,
+#header .main_menu .menu_service.active,
+#header .main_menu .menu_donate.active {
  	background-color: #240540;
 	box-shadow: 0px -4px 2px -2px white inset;
 }

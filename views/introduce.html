@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>KPRG</title>
+        <title>KPRG-연구팀 소개</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
     </head>
         <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
         <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
-        <link rel='stylesheet' href='/stylesheets/index.css' />
+        <link rel='stylesheet' href='/stylesheets/introduce.css' />
     </head>
 
     <body>
 		<%- include header.html %>
 
-		<section id="mainPageSection">
-			<img id="mainPageImg"></img>
+		<section id="introduceSection">
+			<div class="introduceTitle">
+				<span class="firstTitle">Korea Pain Research Group</span><br>
+				<span class="secondTitle">연구팀 소개</span>
+			</div>
+			<div class="introduceContent">
+				<p>연구 프로젝트 소개</p>
+				<p>연구진 소개</p>
+				<p>제휴 병원 소개</p>
+			</div>
 		</section>
 		
 		<%- include footer.html %>
     </body>
 
-    <div id="notice">
-		<div id="notice-icon"></div><div id="notice-content"></div>
-	</div>
-
 	<script src="jquery/jquery.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
-	<script src="modules/index.js"></script>
+	<script src="modules/introduce.js"></script>
 	<script src="modules/common.js"></script>
 	<script>
-		INDEX.init();
+		INTRODUCE.init();
 		COMMON.init_events();
 	</script>
 

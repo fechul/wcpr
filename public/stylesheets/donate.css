@@ -1,0 +1,29 @@
+#donateSection {
+	padding: 50px;
+	text-align: center;
+}
+
+.donateTitle {
+	width: 45%;
+	margin: 50px auto;
+	border-bottom: 1px solid #333;
+}
+
+.donateTitle .firstTitle {
+	color: black; 
+    text-shadow: #77618e 0px 2px, #77618e 2px 0px, #77618e -2px 0px, 
+    #77618e 0px -2px, #77618e -1.4px -1.4px, #77618e 1.4px 1.4px, 
+    #77618e 1.4px -1.4px, #77618e -1.4px 1.4px; 
+    font-size: 32px;
+}
+
+.donateTitle .secondTitle {
+    font-size: 28px;
+    display: block;
+    font-weight: bold;
+}
+
+.donateContent {
+    margin-bottom: 50px;
+}
+

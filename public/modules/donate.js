@@ -1,0 +1,5 @@
+var DONATE = {
+	init: function() {
+
+	}
+};

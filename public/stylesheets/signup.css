@@ -7,6 +7,7 @@
 
 .signupTitle {
 	margin-bottom: 50px;
+	border-bottom: 1px solid #333;
 }
 
 .signupTitle .firstTitle {
@@ -21,7 +22,6 @@
 
 .signupTitle .secondTitle {
     font-size: 28px;
-    border-bottom: 1px solid #333;
     display: block;
     font-weight: bold;
 }

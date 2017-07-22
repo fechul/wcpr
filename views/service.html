@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>KPRG</title>
+        <title>KPRG-검사/서비스</title>
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
     </head>
         <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
         <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
-        <link rel='stylesheet' href='/stylesheets/index.css' />
+        <link rel='stylesheet' href='/stylesheets/service.css' />
     </head>
 
     <body>
 		<%- include header.html %>
 
-		<section id="mainPageSection">
-			<img id="mainPageImg"></img>
+		<section id="serviceSection">
+			<div class="serviceTitle">
+				<span class="firstTitle">Korea Pain Research Group</span><br>
+				<span class="secondTitle">WPI란 무엇인가요?</span>
+			</div>
+			<div class="serviceContent">
+				<p>온라인 차트 시스템+ 만성 통증 진단도구 WCPE, WCPR</p>
+				<p>예시 프로파일과 설명</p>
+				<p>검사를 이용하려면?</p>
+			</div>
+
+			<div class="buttons">
+				<button id="doCheck">검사하기</button>
+			</div>
 		</section>
 		
 		<%- include footer.html %>
     </body>
 
-    <div id="notice">
-		<div id="notice-icon"></div><div id="notice-content"></div>
-	</div>
-
 	<script src="jquery/jquery.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
-	<script src="modules/index.js"></script>
+	<script src="modules/service.js"></script>
 	<script src="modules/common.js"></script>
 	<script>
-		INDEX.init();
+		SERVICE.init();
 		COMMON.init_events();
 	</script>
 

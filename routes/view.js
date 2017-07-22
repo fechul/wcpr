@@ -30,7 +30,8 @@ router.get('/', function(req, res) {
 	var json = {
 		loginDisplay: '',
 		myInfoDisplay: '',
-		fullName: ''
+		fullName: '',
+		menuActive: ''
 	};
 
 	if(req.session.login) {
@@ -49,7 +50,8 @@ router.get('/login', no_login, function(req, res) {
 	var json = {
 		loginDisplay: '',
 		myInfoDisplay: '',
-		fullName: ''
+		fullName: '',
+		menuActive: ''
 	};
 
 	if(req.session.login) {
@@ -68,7 +70,8 @@ router.get('/signup', no_login, function(req, res) {
 	var json = {
 		loginDisplay: '',
 		myInfoDisplay: '',
-		fullName: ''
+		fullName: '',
+		menuActive: ''
 	};
 
 	if(req.session.login) {
@@ -95,7 +98,65 @@ router.get('/error', function(req, res) {
 	var json = {
 		loginDisplay: '',
 		myInfoDisplay: '',
-		fullName: ''
+		fullName: '',
+		menuActive: ''
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
+router.get('/introduce', no_login, function(req, res) {
+	var path = 'introduce.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: 'introduce'
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
+router.get('/service', no_login, function(req, res) {
+	var path = 'service.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: 'service'
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
+router.get('/donate', no_login, function(req, res) {
+	var path = 'donate.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: 'donate'
 	};
 
 	if(req.session.login) {

@@ -1,0 +1,37 @@
+#serviceSection {
+	padding: 50px;
+	text-align: center;
+}
+
+.serviceTitle {
+	width: 45%;
+	margin: 50px auto;
+	border-bottom: 1px solid #333;
+}
+
+.serviceTitle .firstTitle {
+	color: black; 
+    text-shadow: #77618e 0px 2px, #77618e 2px 0px, #77618e -2px 0px, 
+    #77618e 0px -2px, #77618e -1.4px -1.4px, #77618e 1.4px 1.4px, 
+    #77618e 1.4px -1.4px, #77618e -1.4px 1.4px; 
+    font-size: 32px;
+}
+
+.serviceTitle .secondTitle {
+    font-size: 28px;
+    display: block;
+    font-weight: bold;
+}
+
+.serviceContent {
+    margin-bottom: 50px;
+}
+
+#doCheck {
+    width: 30%;
+    height: 40px;
+    background-color: #2f0d54;
+    color: white;
+    border: 1px solid #150427;
+}
+

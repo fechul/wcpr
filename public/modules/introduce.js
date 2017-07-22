@@ -1,0 +1,5 @@
+var INTRODUCE = {
+	init: function() {
+
+	}
+};
