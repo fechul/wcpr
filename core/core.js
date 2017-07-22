@@ -42,8 +42,8 @@ exports.signup = function(data, callback) {
                         'to': data.email,
                         'subject': 'Korea Pain Research Group 회원가입 인증메일',
                         'html': [
-                            '<div style="border:1px solid #ccc; padding:20px; max-width:500px; margin:50px auto; border-radius:10px; text-align:center; background:linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,   linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,   linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,   linear-gradient(90deg, #1b1b1b 10px, transparent 10px),   linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424); background-size:20px 20px; background-color:#131313;">',
-                                '<div style="color:#fff !important;"><div style="font-size:48px;font-weight:bold;">Korea Pain Research Group</div><div style="font-size:30px;font-weight:bold;">Zonexperts</div></div><div style="font-size:20px;margin-top:30px; color:#fff !important">회원가입 인증메일입니다.</div><br>',
+                            '<div style="border:1px solid #ccc; padding:20px; max-width:680px; margin:50px auto; border-radius:10px; text-align:center; background:linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,   linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,   linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,   linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,   linear-gradient(90deg, #1b1b1b 10px, transparent 10px),   linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424); background-size:20px 20px; background-color:#131313;">',
+                                '<div style="color:#fff !important;"><div style="font-size:48px;font-weight:bold;">Korea Pain Research Group</div></div><div style="font-size:20px;margin-top:30px; color:#fff !important">회원가입 인증메일입니다.</div><br>',
                                 '<p style="color:#fff !important;">아래의 링크를 클릭하면 인증이 완료됩니다.</p><br>',
                                 '<a href=',__url,'/auth?token=',token,' style="font-size:22px; color:#fff;">인증하기</a>',
                             '</div>'
@@ -51,7 +51,6 @@ exports.signup = function(data, callback) {
                     };
 
                     smtpTransport.sendMail(mailOptions, function(err, res) {
-                        console.log("err: ", err)
                         if(!res) {
                             db.kprg_user.remove({
                                 'email': data.email
@@ -62,10 +61,6 @@ exports.signup = function(data, callback) {
                                 callback(validation);
                             });
                         } else {
-                            db.kprg_user.remove({
-                                'email': data.email
-                            }, function(removeErr) {
-                            });
                             smtpTransport.close();
                             callback(validation);
                         }
@@ -85,17 +80,17 @@ exports.auth = function(data, callback) {
     };
 
     db.kprg_user.find({
-        'signup_auth_token': data.token
+        'token': data.token
     }, function(err, find) {
         if (err) {
             auth_signup.code = 1;
             callback(auth_signup);
         } else if (find.length === 1) {
             db.kprg_user.update({
-                'signup_auth_token': data.token
+                'token': data.token
             }, {
                 '$set': {
-                    'signup_auth_token': '',
+                    'token': '',
                     'authed': true
                 }
             }, function(err) {

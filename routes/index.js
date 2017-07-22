@@ -29,7 +29,11 @@ router.get('/auth', function(req, res) {
 	core.auth({
 		'token': req.query.token
 	}, function(signup) {
-		res.redirect('/signup_complete');
+		if(signup.result) {
+			res.redirect('/signup_complete');
+		} else {
+			res.redirect('/error');
+		}
 	});
 });
 

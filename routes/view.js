@@ -81,4 +81,31 @@ router.get('/signup', no_login, function(req, res) {
 	res.render(path, json);
 });
 
+router.get('/signup_complete', function(req, res) {
+	var path = 'signupComplete.html';
+
+	var json = {};
+
+	res.render(path, json);
+});
+
+router.get('/error', function(req, res) {
+	var path = 'error.html';
+
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: ''
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
 module.exports = router;

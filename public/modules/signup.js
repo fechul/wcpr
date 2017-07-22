@@ -36,22 +36,9 @@ var SIGNUP = {
 				qualification: $('#signupQualification').val()
 			};
 
-			// testcode
-			// var data = {
-			// 	email: 'nice0612@gmail.com',
-			// 	pw: 'qwer12#$',
-			// 	rePw: 'qwer12#$',
-			// 	lastName: '민',
-			// 	firstName: '철',
-			// 	sex: 'm',
-			// 	birthYear: '1991',
-			// 	birthMonth: '6',
-			// 	birthDate: '12',
-			// 	phone: '01047557490',
-			// 	qualification: '2'
-			// };
-
+			$('.loader').show();
 			$.post('/signup', data, function(result) {
+				$('.loader').hide();
 				if(!result) {
 					self.showErr(1);
 				} else {
