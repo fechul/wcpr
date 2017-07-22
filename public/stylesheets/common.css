@@ -49,7 +49,7 @@ body {
 }
 
 #header .tools .login,
-#header .tools .my_page,
+#header .tools .my_menu,
 #header .main_menu .menu_introduce,
 #header .main_menu .menu_service,
 #header .main_menu .menu_donate {
@@ -63,12 +63,12 @@ body {
 }
 
 #header .tools .login,
-#header .tools .my_page {
+#header .tools .my_menu {
 	padding-top: 25px;
 }
 
 #header .tools .login:hover,
-#header .tools .my_page:hover,
+#header .tools .my_menu:hover,
 #header .main_menu .menu_introduce:hover,
 #header .main_menu .menu_service:hover,
 #header .main_menu .menu_donate:hover {
@@ -105,6 +105,46 @@ footer {
 .footerRow {
 	line-height: 1.8;
 }
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus,
+.nav > li > a:hover, .nav > li > a:focus {
+	background-color: #2f0d54 !important;
+	border-color: #2f0d54 !important;
+}
+
+#header .dropdown .dropdown-menu {
+	padding: 0px !important;
+}
+
+#header .dropdown .dropdown-menu > li,
+#header .dropdown .dropdown-menu > li:hover,
+#header .dropdown .dropdown-menu > li:active,
+#header .dropdown .dropdown-menu > li:focus {
+	background-color: #2f0d54;
+}
+
+#header .dropdown .dropdown-menu > li > a {
+	background-color: #2f0d54;
+	color: #fff;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+	padding: 15px 0px;
+}
+
+#header .dropdown .dropdown-menu > li > a:hover,
+#header .dropdown .dropdown-menu > li > a:active,
+#header .dropdown .dropdown-menu > li > a:focus {
+	background-color: #240540;
+	color: #fff;
+}
+
+#header .navbar-collapse {
+	padding: 0px;
+}
+
+/*
+	<-- Loader -->
+*/
 
 .loader {
   margin: 0 auto;

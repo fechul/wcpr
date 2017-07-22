@@ -57,4 +57,30 @@ router.post('/login', function(req, res) {
 	});
 });
 
+router.post('/logout', function(req, res) {
+	var json = {
+		'result': true
+	};
+
+	req.session.destroy(function(err) {
+		if (err) {
+			json.result = false;
+		}
+
+		res.json(json);
+	});
+});
+
+router.get('/findId', function(req, res) {
+	core.findId(req.query, function(find) {
+		res.json(find);
+	});
+});
+
+router.post('/findPw', function(req, res) {
+	core.findPw(req.body, function(find) {
+		res.json(find);
+	});
+});
+
 module.exports = router;

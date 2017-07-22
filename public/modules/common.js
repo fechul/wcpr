@@ -9,5 +9,15 @@ var COMMON = {
 		$('#header .tools > .login').click(function() {
 			location.href = '/login';
 		});
+
+		$('#header .tools .logout').click(function() {
+			$.post('/logout', function(logout) {
+				if(logout.result) {
+					location.href = '/';
+				} else {
+					location.href = '/error';
+				}
+			});
+		});
 	}
 };

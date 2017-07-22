@@ -61,12 +61,15 @@
 	border: 1px solid #150427;
 }
 
-#goToSignup {
+.goToSignup,
+.goToSignup:hover,
+.goToSignup:active,
+.goToSignup:focus {
 	width: 100%;
 	height: 40px;
-	background-color: #b91616;
+	background-color: #b91616 !important;
 	color: white;	
-	border: 1px solid #a21616;
+	border: 1px solid #a21616 !important;
 }
 
 .signupFirstText {
@@ -95,3 +98,94 @@
 	margin-left: 15px;
 	font-size: 12px;
 }
+
+.helpText {
+	cursor: pointer;
+}
+
+.helpText:hover {
+	text-decoration: underline;
+}
+
+#loginFindIdModal > .modal-dialog,
+#loginFindPwModal > .modal-dialog {
+	text-align: center;
+	width: 500px;
+	margin-top: 100px;
+}
+
+#loginFindIdModal > .modal-dialog > .modal-content,
+#loginFindPwModal > .modal-dialog > .modal-content {
+	padding: 30px 60px;
+}
+
+#loginFindIdModal > .modal-dialog > .modal-content > .modal-header,
+#loginFindPwModal > .modal-dialog > .modal-content > .modal-header {
+	border-bottom: 1px solid #999;
+}
+
+#loginFindIdModal > .modal-dialog > .modal-content .modal-footer,
+#loginFindPwModal > .modal-dialog > .modal-content .modal-footer {
+	text-align: center;
+	border-top: 0px;
+}
+
+#loginFindIdModal > .modal-dialog > .modal-content > .modal-header > .modal-title,
+#loginFindPwModal > .modal-dialog > .modal-content > .modal-header > .modal-title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.modalContentFirst {
+	color: #999;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.modalContentSecond {
+	color: #ff0000;
+	font-size: 13px;
+}
+
+#findId,
+#goToFindId,
+.confirm,
+#findPw,
+#goToFindPw {
+	width: 80%;
+	background-color: #2f0d54 !important;
+	color: white !important;
+	border: 1px solid #150427 !important;
+}
+
+.modalInputBox {
+	margin-bottom: 10px;
+}
+
+.modalInputBox > input {
+	width: 80%;
+	margin: 0 auto;
+	display: inline-block;
+}
+
+.modalInputBox > i {
+	position: absolute;
+	color: #d82a27;
+	margin: 10px;
+	display: none;
+}
+
+#foundId {
+	font-weight: bold;
+}
+
+#loginFindIdModal .noInfo .goToSignup {
+	width: 80%;
+	height: inherit;
+	margin: 0px;
+}
+
+#goToFindId {
+	margin-bottom: 15px;
+}
+

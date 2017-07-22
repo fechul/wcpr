@@ -17,7 +17,15 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right tools">
-				<li class="my_page" style="<%= myInfoDisplay %>"><%= fullName %> <i class="fa fa-caret-down"></i></li>
+				<li class="dropdown" style="<%= myInfoDisplay %>">
+					<a href="#" class="dropdown-toggle my_menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= fullName %> <i class="fa fa-caret-down"></i></a>
+		            <ul class="dropdown-menu">
+			            <li><a href="#">환자 내역</a></li>
+			            <li><a href="#">구독 내역</a></li>
+			            <li><a href="#">계정 정보 관리</a></li>
+			            <li><a href="#" class="logout">로그아웃</a></li>
+		            </ul>
+		        </li>
 				<li class="login" style="<%= loginDisplay %>">로그인</li>
 			</ul>
 		</div>
