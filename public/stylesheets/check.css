@@ -1,0 +1,59 @@
+#checkSection {
+	padding: 50px;
+	text-align: center;
+}
+
+.checkTitle {
+	width: 45%;
+	margin: 50px auto;
+    margin-top: 0px;
+	border-bottom: 1px solid #333;
+}
+
+.checkTitle .firstTitle {
+	color: black; 
+    text-shadow: #77618e 0px 2px, #77618e 2px 0px, #77618e -2px 0px, 
+    #77618e 0px -2px, #77618e -1.4px -1.4px, #77618e 1.4px 1.4px, 
+    #77618e 1.4px -1.4px, #77618e -1.4px 1.4px; 
+    font-size: 32px;
+}
+
+.checkTitle .secondTitle {
+    font-size: 28px;
+    display: block;
+    font-weight: bold;
+}
+
+.checkProgressContainer {
+    width: 45%;
+    margin: 0 auto;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.checkProgress {display: flex;}
+.checkProgress > .checkProgress-step {padding: 0; position: relative;}
+.checkProgress > .checkProgress-step .checkProgress-stepnum {font-size: 14px; margin-bottom: 5px;}
+.checkProgress > .checkProgress-step.active .checkProgress-stepnum {color: #644784; font-weight: bold;}
+.checkProgress > .checkProgress-step.active > .checkProgress-dot {position: absolute; width: 30px; height: 30px; display: block; background: #85699e; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.checkProgress > .checkProgress-step.active > .checkProgress-dot:after {content: ' '; width: 14px; height: 14px; background: #4c1675; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.checkProgress > .checkProgress-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.checkProgress > .checkProgress-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #f5f5f5;}
+.checkProgress > .checkProgress-step > .checkProgress-dot {position: absolute; width: 30px; height: 30px; display: block; background: #eee; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
+.checkProgress > .checkProgress-step > .checkProgress-dot:after {content: ' '; width: 14px; height: 14px; background: #ccc; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
+.checkProgress > .checkProgress-step:first-child  > .progress {left: 50%; width: 50%;}
+.checkProgress > .checkProgress-step:last-child  > .progress {width: 50%;}
+.checkProgress > .checkProgress-step a.checkProgress-dot{ pointer-events: none; }
+
+.step1_buttons {
+    margin: 50px 0px;
+}
+
+.step1_buttons > button {
+    width: 20%;
+    height: 40px;
+    background-color: #2f0d54;
+    color: white;
+    border: 1px solid #150427;
+    margin: 0px 15px;
+}

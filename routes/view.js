@@ -188,6 +188,25 @@ router.get('/policy', function(req, res) {
 	res.render(path, json);
 });
 
+router.get('/check', need_login, function(req, res) {
+	var path = 'check.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: 'service'
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
 router.get('/under_construction', function(req, res) {
 	var path = 'underConstruction.html';
 	var json = {

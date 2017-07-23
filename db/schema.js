@@ -15,7 +15,7 @@ var kprg_userSchema = new Schema({
     'signupDate': Date,
     'authed': Boolean,
     'token': String,
-    'level': Number
+    'manager': Boolean
 });
 
 var kprg_user = mongoose.model('kprg_user', kprg_userSchema);

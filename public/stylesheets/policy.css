@@ -6,6 +6,7 @@
 .policyTitle {
 	width: 45%;
 	margin: 30px auto;
+    margin-top: 0px;
 	border-bottom: 1px solid #333;
 }
 

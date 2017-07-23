@@ -1,5 +1,0 @@
-var INTRODUCE = {
-	init: function() {
-
-	}
-};

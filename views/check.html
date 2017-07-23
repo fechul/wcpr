@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KPRG-검사</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
+    </head>
+        <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
+        <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
+        <link rel='stylesheet' href='/stylesheets/check.css' />
+    </head>
+
+    <body>
+		<%- include header.html %>
+
+		<section id="checkSection">
+			<div class="checkTitle">
+				<span class="firstTitle">Korea Pain Research Group</span><br>
+				<span class="secondTitle">검사</span>
+			</div>
+
+			<div class="checkProgressContainer">
+				<div class="checkProgress">
+	                <div class="col-xs-4 checkProgress-step active">
+	                    <div class="text-center checkProgress-stepnum">1단계 차트</div>
+	                    <div class="progress"><div class="progress-bar"></div></div>
+	                    <a href="#" class="checkProgress-dot"></a>
+	                </div>
+	                
+	                <div class="col-xs-4 checkProgress-step">
+	                    <div class="text-center checkProgress-stepnum">2단계 WCPE</div>
+	                    <div class="progress"><div class="progress-bar"></div></div>
+	                    <a href="#" class="checkProgress-dot"></a>
+	                </div>
+	                
+	                <div class="col-xs-4 checkProgress-step">
+	                    <div class="text-center checkProgress-stepnum">3단계 WCPR</div>
+	                    <div class="progress"><div class="progress-bar"></div></div>
+	                    <a href="#" class="checkProgress-dot"></a>
+	                </div>
+	            </div>
+			</div>
+			
+			<div class="step1_buttons">
+				<button id="existCheck">기존 환자 재검사</button>
+				<button id="newCheck">신규 환자 검사</button>
+			</div>
+
+		</section>
+		
+		<%- include footer.html %>
+    </body>
+
+	<script src="jquery/jquery.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
+	<script src="modules/common.js"></script>
+	<script>
+		COMMON.init_events();
+	</script>
+
+</html>
