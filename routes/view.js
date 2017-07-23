@@ -112,7 +112,7 @@ router.get('/error', function(req, res) {
 	res.render(path, json);
 });
 
-router.get('/introduce', no_login, function(req, res) {
+router.get('/introduce', function(req, res) {
 	var path = 'introduce.html';
 	var json = {
 		loginDisplay: '',
@@ -131,7 +131,7 @@ router.get('/introduce', no_login, function(req, res) {
 	res.render(path, json);
 });
 
-router.get('/service', no_login, function(req, res) {
+router.get('/service', function(req, res) {
 	var path = 'service.html';
 	var json = {
 		loginDisplay: '',
@@ -150,13 +150,51 @@ router.get('/service', no_login, function(req, res) {
 	res.render(path, json);
 });
 
-router.get('/donate', no_login, function(req, res) {
+router.get('/donate', function(req, res) {
 	var path = 'donate.html';
 	var json = {
 		loginDisplay: '',
 		myInfoDisplay: '',
 		fullName: '',
 		menuActive: 'donate'
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
+router.get('/policy', function(req, res) {
+	var path = 'policy.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: ''
+	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
+router.get('/under_construction', function(req, res) {
+	var path = 'underConstruction.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: ''
 	};
 
 	if(req.session.login) {

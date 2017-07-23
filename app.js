@@ -105,10 +105,22 @@ app.use(function(err, req, res, next) {
 	// render the error page
 	// res.status(err.status || 500);
 	// res.send('error');
-	var path = 'error.html';
+	var path = 'underConstruction.html';
 	var json = {
-
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: ''
 	};
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
 });
 
 module.exports = app;
