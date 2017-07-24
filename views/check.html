@@ -7,6 +7,7 @@
         <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
         <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
         <link rel='stylesheet' href='/stylesheets/check.css' />
+        <link rel='stylesheet' href='/bootstrap/bootstrap-datetimepicker.min.css' />
     </head>
 
     <body>
@@ -45,6 +46,97 @@
 				<button id="newCheck">신규 환자 검사</button>
 			</div>
 
+			<div class="step1_exist">
+				<label class="stepLabel">환자 이름</label>
+				<input class="patientName form-control" type="text"></input>
+				<button class="search">검색</button>
+			</div>
+
+			<div class="step1_new">
+				<label class="stepLabel">환자 이름</label>
+				<input class="patientName form-control" type="text"></input>
+				<label class="stepLabel">생년월일</label>
+				<div class="birthDateWrap">
+					<div class='input-group date' id='patientBirthDate'>
+	                    <input type='text' class="form-control" />
+	                    <span class="input-group-addon">
+	                    	<i class="fa fa-calendar"></i>
+	                    </span>
+	                </div>
+				</div>
+				<label class="stepLabel" >성별</label>
+				<select class="form-control" id="patientSex">
+					<option value="w" selected>여자</option>
+					<option value="m">남자</option>
+				</select>
+			</div>
+
+			<div class="step1_checkContent">
+				<div class="checkBoxContainer">
+					<div class="checkSection">
+						<label>앞</label><br>
+						<div class="checkDivSection">
+							<input type="checkbox">머리</input><br>
+							<input type="checkbox">왼쪽 어깨</input><br>
+							<input type="checkbox">오른쪽 어깨</input><br>
+							<input type="checkbox">왼쪽 가슴</input><br>
+							<input type="checkbox">오른쪽 가슴</input><br>
+							<input type="checkbox">명치</input><br>
+							<input type="checkbox">왼쪽 팔</input><br>
+							<input type="checkbox">오른쪽 팔</input><br>
+							<input type="checkbox">배</input><br>
+							<input type="checkbox">왼쪽 골반</input>
+						</div>
+						<div class="checkDivSection">
+							<input type="checkbox">오른쪽 골반</input><br>
+							<input type="checkbox">생식기</input><br>
+							<input type="checkbox">왼쪽 허벅지</input><br>
+							<input type="checkbox">오른쪽 허벅지</input><br>
+							<input type="checkbox">왼쪽 무릎</input><br>
+							<input type="checkbox">오른쪽 무릎</input><br>
+							<input type="checkbox">왼쪽 발목</input><br>
+							<input type="checkbox">오른쪽 발목</input><br>
+							<input type="checkbox">왼쪽 발가락</input><br>
+							<input type="checkbox">오른쪽 발가락</input>
+						</div>
+					</div>
+					<div class="checkSection">
+						<label>뒤</label><br>
+						<div class="checkDivSection">
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input>
+						</div>
+						<div class="checkDivSection">
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input><br>
+							<input type="checkbox">11</input>
+						</div>
+					</div>
+				</div>
+				
+				<div class="recordContainer">
+					
+				</div>
+			</div>
+
 		</section>
 		
 		<%- include footer.html %>
@@ -52,8 +144,10 @@
 
 	<script src="jquery/jquery.js"></script>
 	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="bootstrap/bootstrap-datetimepicker.min.js"></script>
 	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
 	<script src="modules/common.js"></script>
+	<script src="modules/check.js"></script>
 	<script>
 		COMMON.init_events();
 	</script>

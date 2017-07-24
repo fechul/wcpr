@@ -57,3 +57,61 @@
     border: 1px solid #150427;
     margin: 0px 15px;
 }
+
+.step1_exist,
+.step1_new,
+.step1_checkContent {
+    text-align: left;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.stepLabel {
+    margin-right: 10px;
+}
+
+.patientName,
+#patientSex {
+    width: 20%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.birthDateWrap {
+    display: inline-block;
+    margin-right: 10px;
+    width: 25%;
+    position: relative;
+    top: 12px;
+}
+
+.checkBoxContainer {
+    width: 45%;
+    float: left;
+    min-height: 300px;
+}
+
+.checkSection {
+    display: inline-block;
+    text-align: center;
+    margin: 0px 15px;
+}
+
+.recordContainer {
+    width: 45%;
+    float: right;
+    min-height: 300px;
+    border: 1px solid #ccc;
+}
+
+.checkDivSection {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+.checkDivSection > input {
+    margin: 5px;
+}
+
+
