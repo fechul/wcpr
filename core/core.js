@@ -37,15 +37,21 @@ exports.signup = function(data, callback) {
                         }
                     });
 
+                    var targetName = data.lastName + data.firstName;
                     var mailOptions = {
                         'from': 'Korea Pain Research Group <' + __adminEmail + '>',
                         'to': data.email,
                         'subject': 'Korea Pain Research Group 회원가입 인증메일',
                         'html': [
-                            '<div style="border:1px solid #ccc; padding:20px; max-width:680px; margin:50px auto; border-radius:10px; text-align:center; background:linear-gradient(27deg, #20083a 5px, transparent 5px) 0 5px,   linear-gradient(207deg, #20083a 5px, transparent 5px) 10px 0px,   linear-gradient(27deg, #451677 5px, transparent 5px) 0px 10px,   linear-gradient(207deg, #451677 5px, transparent 5px) 10px 5px,   linear-gradient(90deg, #3d0c71 10px, transparent 10px),   linear-gradient(#3d126b 25%, #2f0d54 25%, #2f0d54 50%, transparent 50%, transparent 75%, #530f9c 75%, #530f9c); background-size:20px 20px; background-color:#3d0c71">',
-                                '<div style="color:#fff !important;"><div style="font-size:48px;font-weight:bold;">Korea Pain Research Group</div></div><div style="font-size:20px;margin-top:30px; color:#fff !important">회원가입 인증메일입니다.</div><br>',
-                                '<p style="color:#fff !important;">아래의 링크를 클릭하면 인증이 완료됩니다.</p><br>',
-                                '<a href=',__url,'/auth?token=',token,' style="font-size:22px; color:#fff;">인증하기</a>',
+                            '<div style="max-width: 680px; border: 1px solid #ccc; margin:50px auto;">',
+                                '<div style="height:35px; background-color:#2f0d54; padding:11px; font-size:24px; color:#fff;">Korea Pain Research Group</div><div style="background-color:#fff; padding:30px 10px;">',
+                                    '<p>안녕하세요. ', targetName, '님.</p>',
+                                    '<p>한국 통증 연구 그룹의 검사를 구독하기 위해 이메일 주소를 확인해주세요.</p>',
+                                    '<div style="margin:30px auto;">',
+                                        '<a href=',__url,'/auth?token=',token,' style="text-decoration:none; font-size:16px; color:#fff; background-color:#2f0d54; padding: 10px;">이메일 계정 확인하기</a>',
+                                    '</div>',
+                                    '<p>한국 통증 연구 그룹에 가입해주셔서 감사합니다.</p>',
+                                '</div>',
                             '</div>'
                         ].join('')
                     };
@@ -336,12 +342,14 @@ exports.findPw = function(options, callback) {
                     'to': find.email,
                     'subject': 'Korea Pain Research Group 임시비밀번호 발급',
                     'html': [
-                        '<div style="border:1px solid #ccc; padding:20px; max-width:680px; margin:50px auto; border-radius:10px; text-align:center; background:linear-gradient(27deg, #20083a 5px, transparent 5px) 0 5px,   linear-gradient(207deg, #20083a 5px, transparent 5px) 10px 0px,   linear-gradient(27deg, #451677 5px, transparent 5px) 0px 10px,   linear-gradient(207deg, #451677 5px, transparent 5px) 10px 5px,   linear-gradient(90deg, #3d0c71 10px, transparent 10px),   linear-gradient(#3d126b 25%, #2f0d54 25%, #2f0d54 50%, transparent 50%, transparent 75%, #530f9c 75%, #530f9c); background-size:20px 20px; background-color:#3d0c71">',
-                            '<div style="color:#fff !important;"><div style="font-size:48px;font-weight:bold;">Korea Pain Research Group</div></div><div style="font-size:20px;margin-top:30px; color:#fff !important">안녕하세요 ' + targetName + '님!</div><br>',
-                            '<p style="color:#fff !important;">임시비밀번호를 아래와 같이 발급해드립니다.</p><br>',
-                            '<p style="color:#fff !important;">임시비밀번호로 로그인 후에는 꼭! 비밀번호를 변경해주세요.</p><br>',
-                            '<div style="background-color:#fff; color:#2f0d54; padding:10px; width:200px; margin:0 auto;">' + newPw + '</div>',
-                            '<p style="color:#fff !important;">Korea Pain Research Group을 이용해 주셔서 감사합니다.</p>',
+                        '<div style="max-width: 680px; border: 1px solid #ccc; margin:50px auto;">',
+                            '<div style="height:35px; background-color:#2f0d54; padding:11px; font-size:24px; color:#fff;">Korea Pain Research Group</div><div style="background-color:#fff; padding:30px 10px;">',
+                                '<p>안녕하세요. 민철님.</p>',
+                                '<p>임시비밀번호를 아래와 같이 발급해드립니다.</p>',
+                                '<p>임시비밀번호로 로그인 후에는 꼭! 비밀번호를 변경해주세요.</p>',
+                                '<div style="text-align:center; background-color:#2f0d54; color:#fff; padding:10px; width:200px;">' + newPw + '</div>',
+                                '<p>Korea Pain Research Group을 이용해 주셔서 감사합니다.</p>',
+                            '</div>',
                         '</div>'
                     ].join('')
                 };
