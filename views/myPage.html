@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>KPRG-검사</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><head>
+    </head>
+        <link rel='stylesheet' href='/bootstrap/bootstrap.css' />
+        <link rel='stylesheet' media="only screen" href='/stylesheets/common.css' />
+        <link rel='stylesheet' href='/stylesheets/myPage.css' />
+        <link rel='stylesheet' href='/bootstrap/bootstrap-datetimepicker.min.css' />
+    </head>
+
+    <body>
+		<%- include header.html %>
+
+		<div class="loader">
+			<div class="rect rect1"></div>
+			<div class="rect rect2"></div>
+			<div class="rect rect3"></div>
+			<div class="rect rect4"></div>
+			<div class="rect rect5"></div>
+			<div class="loaderText">잠시만 기다려주세요.</div>
+		</div>
+		<section id="myPageSection">
+			<div class="myPageContainer">
+				<ul class="myPageMenus nav nav-tabs">
+			  		<li class="<%= active_patient %>"><a data-toggle="tab" href="#patient">환자 내역</a></li>
+			  		<li class="<%= active_qualification %>"><a data-toggle="tab" href="#qualification">구독 내역</a></li>
+			  		<li class="<%= active_account %>"><a data-toggle="tab" href="#account">계정 정보 관리</a></li>
+				</ul>
+
+				<div class="myPageContents tab-content">
+			  		<div id="patient" class="tab-pane fade <%= in_patient %> <%= active_patient %>">
+			    		<p>환자 내역</p>
+			  		</div>
+			  		<div id="qualification" class="tab-pane fade <%= in_qualification %> <%= active_qualification %>">
+			    		<p>구독 내역</p>
+			  		</div>
+				  	<div id="account" class="tab-pane fade <%= in_account %> <%= active_account %>">
+				  		<div class="leftContainer">
+				  			<div class="modifyInputBox col-md-12">
+					    		<label class="modifyLabel">이메일</label>
+					    		<input class="form-control" type="text" id="modifyEmailInput" disabled value="<%= myEmail %>"></input>
+					    	</div>
+					    	<div class="modifyInputBox col-md-12">
+					    		<label class="modifyLabel">기존 비밀번호</label>
+					    		<input class="form-control" type="password" id="modifyPwInput"></input>
+					    		<span class="errMsg wrongPw">비밀번호가 맞지 않습니다.</span>
+					    	</div>
+					    	<div class="modifyInputBox col-md-12">
+					    		<label class="modifyLabel">새로운 비밀번호</label>
+					    		<input class="form-control" type="password" id="modifyNewPwInput"></input>
+					    		<span class="errMsg wrongNewPw">새로운 비밀번호가 형식에 맞지 않습니다.<br>영문, 숫자, 특수기호의 2가지 이상 조합으로 8자리 이상이어야 합니다.</span>
+					    	</div>
+					    	<div class="modifyInputBox col-md-12">
+					    		<label class="modifyLabel">비밀번호 확인</label>
+					    		<input class="form-control" type="password" id="modifyRePwInput"></input>
+					    		<span class="errMsg wrongRePw">비밀번호 확인이 맞지 않습니다.</span>
+					    	</div>
+					    	<div class="modifyInputBox col-md-12 no-pad">
+					    		<div class="col-md-4">
+					    			<label class="modifyLabel">성</label>
+					    			<input class="form-control" type="text" id="modifyLastNameInput" value="<%= myLastName %>"></input>
+					    			<span class="errMsg wrongLastName">성을 제대로 입력해주세요.</span>
+					    		</div>
+					    		<div class="col-md-8">
+					    			<label class="modifyLabel">이름</label>
+					    			<input class="form-control" type="text" id="modifyFirstNameInput" value="<%= myFirstName %>"></input>
+					    			<span class="errMsg wrongFirstName">이름을 제대로 입력해주세요.</span>
+					    		</div>
+					    	</div>
+					    	<div class="modifyInputBox col-md-12">
+					    		<button id="modify">수정하기</button>
+					    		<span class="errMsg serverErr">오류가 발생했습니다.<br> 잠시 후 다시 시도해주세요.</span>
+					    	</div>
+				  		</div>
+				  		<div class="rightContainer">
+				  			<a id="showLeave">회원 탈퇴하기</a>
+
+				  			<div class="leaveContainer">
+				  				<div class="leaveInputBox col-md-12">
+					  				<label class="leaveLabel">탈퇴 이유</label>
+					  				<textarea class="form-control" id="leaveReason"></textarea>
+					  			</div>
+					  			<div class="leaveInputBox col-md-12">
+						    		<label class="leaveLabel">비밀번호</label>
+						    		<input class="form-control" type="password" id="leavePwInput"></input>
+						    		<span class="errMsg leaveWrongPw">비밀번호가 맞지 않습니다.</span>
+						    	</div>
+						    	<div class="leaveInputBox col-md-12">
+						    		<button id="leave">회원 탈퇴하기</button>
+						    		<span class="errMsg leaveServerErr">오류가 발생했습니다.<br> 잠시 후 다시 시도해주세요.</span>
+						    	</div>
+				  			</div>
+				  		</div>
+				 	 </div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MODAL -->
+	    <div class="modal fade" id="leaveSuccessModal">
+		    <div class="modal-dialog" role="document">
+		    	<div class="modal-content">
+		     	    <div class="modal-header">
+		        		<span class="modal-title">회원 탈퇴 완료</span>
+		      		</div>
+			      	<div class="modal-body">
+			        	<p class="modalContentFirst">회원 탈퇴가 완료되었습니다!<br>그동안 한국 통증 연구 그룹을 후원해주셔서 감사합니다.<br>다시 또 뵙길 기다리겠습니다.(_ _)</p>
+			      	</div>
+			      	<div class="modal-footer">
+			        	<button type="button" class="btn btn-primary" onclick="location.href='/'">확인</button>
+			      	</div>
+		    	</div>
+		  	</div>
+		</div>
+		
+		<%- include footer.html %>
+    </body>
+
+	<script src="jquery/jquery.js"></script>
+	<script src="bootstrap/bootstrap.min.js"></script>
+	<script src="bootstrap/bootstrap-datetimepicker.min.js"></script>
+	<script src="https://use.fontawesome.com/dd32f28b6e.js"></script>
+	<script src="modules/common.js"></script>
+	<script src="modules/myPage.js"></script>
+	<script>
+		myPage.init();
+		COMMON.init_events();
+	</script>
+
+</html>

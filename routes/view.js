@@ -226,4 +226,37 @@ router.get('/under_construction', function(req, res) {
 	res.render(path, json);
 });
 
+router.get('/myPage', need_login, function(req, res) {
+	var path = 'myPage.html';
+	var json = {
+		loginDisplay: '',
+		myInfoDisplay: '',
+		fullName: '',
+		menuActive: '',
+		active_patient: '',
+		active_qualification: '',
+		active_account: '',
+		in_patient: '',
+		in_qualification: '',
+		in_account: '',
+		myEmail: req.session.email || '',
+		myLastName: req.session.lastName || '',
+		myFirstName: req.session.firstName || ''
+	};
+
+	if(req.query.menu) {
+		json['active_' + req.query.menu] = 'active';
+		json['in_' + req.query.menu] = 'in';
+	}
+
+	if(req.session.login) {
+		json.loginDisplay = 'display:none;';
+		json.fullName = req.session.lastName + req.session.firstName + '님';
+	} else {
+		json.myInfoDisplay = 'display:none;';
+	}
+
+	res.render(path, json);
+});
+
 module.exports = router;

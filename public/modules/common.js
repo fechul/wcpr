@@ -19,5 +19,17 @@ var COMMON = {
 				}
 			});
 		});
+
+		$('#header .tools .goToPatientHis').click(function() {
+			location.href = '/myPage?menu=patient';
+		});
+
+		$('#header .tools .goToQualificationHis').click(function() {
+			location.href = '/myPage?menu=qualification';
+		});
+
+		$('#header .tools .goToAccountManage').click(function() {
+			location.href = '/myPage?menu=account';
+		});
 	}
 };

@@ -116,8 +116,8 @@ footer {
 	line-height: 1.8;
 }
 
-.nav .open > a, .nav .open > a:hover, .nav .open > a:focus,
-.nav > li > a:hover, .nav > li > a:focus {
+#header .nav .open > a, #header .nav .open > a:hover, #header .nav .open > a:focus,
+#header .nav > li > a:hover, #header .nav > li > a:focus {
 	background-color: #2f0d54 !important;
 	border-color: #2f0d54 !important;
 }

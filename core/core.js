@@ -210,7 +210,8 @@ exports.login = function(data, callback) {
         'code': 0,
         'email': '',
         'lastName': '',
-        'firstName': ''
+        'firstName': '',
+        'manager': false
     };
 
     //  code list
@@ -235,6 +236,7 @@ exports.login = function(data, callback) {
                     json.email = user_data.email;
                     json.lastName = user_data.lastName;
                     json.firstName = user_data.firstName;
+                    json.manager = user_data.manager;
                 }
             }
         } else {
@@ -365,6 +367,149 @@ exports.findPw = function(options, callback) {
         } else {
             find.result = false;
             callback(find);
+        }
+    });
+};
+
+exports.modifyAccount = function(options, callback) {
+    var email = options.email;
+    var pw = options.pw;
+    var newPw = options.newPw;
+    var rePw = options.rePw;
+    var lastName = options.lastName;
+    var firstName = options.firstName;
+
+    var json = {
+        'result': true,
+        'code': 0
+    };
+
+    db.kprg_user.find({
+        'email': email
+    }).limit(1).lean().exec(function(err, data) {
+        if(data && data.length) {
+            data = data[0];
+
+            if(data.password == md5(pw)) {
+                if(newPw && newPw.length) {
+                    var reg_password = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{8,20}$/;
+
+                    if (newPw.length < 8 || newPw.length > 20) {
+                        json.result = false;
+                        json.code = 21;
+                        callback(json);
+                    } else if (newPw.search(/\s/) != -1) {
+                        json.result = false;
+                        json.code = 21;
+                        callback(json);
+                    } else if (!reg_newPw.test(newPw)) {
+                        json.result = false;
+                        json.code = 21;
+                        callback(json);
+                    } else if (newPw !== rePw) {
+                        json.result = false;
+                        json.code = 22;
+                        callback(json);
+                    } else {
+                        db.kprg_user.update({
+                            'email': email
+                        }, {
+                            $set: {
+                                'password': md5(newPw),
+                                'lastName': lastName,
+                                'firstName': firstName
+                            }
+                        }, function(updateErr) {
+                            if(updateErr) {
+                                json.result = false;
+                                json.code = 1;
+                                callback(json);
+                            } else {
+                                json.lastName = lastName;
+                                json.firstName = firstName;
+                                callback(json);
+                            }
+                        });
+                    }
+
+                } else {
+                    if(!lastName || !lastName.length) {
+                        json.result = false;
+                        json.code = 31;
+                        callback(json);
+                    } else if(!firstName || !firstName.length) {
+                        json.result = false;
+                        json.code = 32;
+                        callback(json);
+                    } else {
+                        db.kprg_user.update({
+                            'email': email
+                        }, {
+                            $set: {
+                                'lastName': lastName,
+                                'firstName': firstName
+                            }
+                        }, function(updateErr) {
+                            if(updateErr) {
+                                json.result = false;
+                                json.code = 1;
+                                callback(json);
+                            } else {
+                                json.lastName = lastName;
+                                json.firstName = firstName;
+                                callback(json);
+                            }
+                        });
+                    }
+                }
+            } else {
+                json.result = false;
+                json.code = 11;
+                callback(json);
+            }
+        } else {
+            json.result = false;
+            json.code = 1;
+            callback(json);
+        }
+    });
+};
+
+exports.leave = function(options, callback) {
+    var email = options.email;
+    var pw = options.pw;
+
+    var json = {
+        'result': true,
+        'code': 0
+    };
+    db.kprg_user.find({
+        'email': email
+    }).limit(1).lean().exec(function(err, data) {
+        if(data && data.length) {
+            data = data[0];
+
+            if(data.password == md5(pw)) {
+                db.kprg_user.remove({
+                    'email': email
+                }, function(_err) {
+                    if(_err) {
+                        json.result = false;
+                        json.code = 1;
+                        callback(json);
+                    } else {
+                        callback(json);
+                    }
+                });
+            } else {
+                json.result = false;
+                json.code = 11;
+                callback(json);
+            }
+        } else {
+            json.result = false;
+            json.code = 1;
+            callback(json);
         }
     });
 };

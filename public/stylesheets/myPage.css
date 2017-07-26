@@ -1,0 +1,126 @@
+.myPageContainer {
+	padding: 75px 200px;
+}
+
+.myPageContents {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 15px;
+	display: flex;
+}
+
+.myPageMenus > li > a {
+	border: 1px solid #ccc;
+}
+
+.myPageMenus > li > a:hover,
+.myPageMenus > li > a:focus,
+.myPageMenus > li.active > a,
+.myPageMenus > li.active > a:hover,
+.myPageMenus > li.active > a:focus {
+	background-color: #2f0d54 !important;
+	color: #fff !important;
+	cursor: pointer;
+}
+
+.no-pad {
+	padding: 0px !important;
+}
+
+.modifyInputBox,
+.leaveInputBox {
+	margin: 10px auto;
+	text-align: center;
+}
+
+.leftContainer {
+	width: 49%;
+	float: left;
+	border-right: 1px solid #eee;
+	padding-right: 10px;
+}
+
+.rightContainer {
+	width: 49%;
+	float: right;
+	padding-left: 10px;
+}
+
+#showLeave {
+	display: block;
+	margin: 20px 10px;
+	cursor: pointer;
+	color: #ff0000;
+	text-decoration: none;
+}
+
+.modifyLabel,
+.leaveLabel {
+	font-weight: normal;
+	font-size: 13px;
+}
+
+#leaveReason {
+	height: 150px !important;
+	width: 100% !important;
+}
+
+.modifyInputBox > button,
+.leaveInputBox > button {
+	width: 80%;
+	background-color: #b91616;
+	color: #fff;
+	height: 40px;
+	border: 1px solid #a21616;
+}
+
+.leaveContainer {
+	display: none;
+}
+
+.errMsg {
+	color: #ff0000;
+	font-size: 11px;
+	display: none;
+	margin-top: 5px;
+}
+
+#leaveSuccessModal > .modal-dialog {
+	text-align: center;
+	width: 500px;
+	margin-top: 100px;
+}
+
+#leaveSuccessModal > .modal-dialog > .modal-content {
+	padding: 30px 60px;
+}
+
+#leaveSuccessModal > .modal-dialog > .modal-content > .modal-header {
+	border-bottom: 1px solid #999;
+}
+
+#leaveSuccessModal > .modal-dialog > .modal-content > .modal-footer {
+	text-align: center;
+	border-top: 0px;
+}
+
+#leaveSuccessModal > .modal-dialog > .modal-content > .modal-header > .modal-title {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.modalContentFirst {
+	color: #999;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#leaveSuccessModal > .modal-dialog > .modal-content > .modal-footer > button {
+	width: 80%;
+	background-color: #2f0d54;
+	color: white;
+	border: 1px solid #150427;
+}
+
+
